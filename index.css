@@ -60,6 +60,7 @@
         border-radius: 30px;
         position: relative;
         background-color: rgb(28, 29, 31);
+        transition: .3s;
     }
 
     #ficha {

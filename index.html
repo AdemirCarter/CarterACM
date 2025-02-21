@@ -15,12 +15,12 @@
 
     <div id="treino" style="display: block;">
         <div id="botoes">
-            <button onclick=Segunda()>Seg</button>
-            <button onclick=Terça()>Ter</button>
-            <button onclick=Quarta()>Qua</button>
-            <button onclick=Quinta()>Qui</button>
-            <button onclick=Sexta()>Sex</button>
-            <button onclick=Sabado()>Sab</button>
+            <button id="seg_button" style="background-color: rgb(0, 81, 255);" onclick=Segunda()>Seg</button>
+            <button id="ter_button" onclick=Terça()>Ter</button>
+            <button id="qua_button" onclick=Quarta()>Qua</button>
+            <button id="qui_button" onclick=Quinta()>Qui</button>
+            <button id="sex_button" onclick=Sexta()>Sex</button>
+            <button id="sab_button" onclick=Sabado()>Sab</button>
         </div>
 
         <div id="ficha">
@@ -48,13 +48,30 @@
             f: document.getElementById("sabado")
         }
 
+        const buttons = {
+            seg: document.getElementById("seg_button"),
+            ter: document.getElementById("ter_button"),
+            qua: document.getElementById("qua_button"),
+            qui: document.getElementById("qui_button"),
+            sex: document.getElementById("sex_button"),
+            sab: document.getElementById("sab_button")
+
+        }
+
         //Funções
         function Segunda() {
             for (i in ficha) {
                 ficha[i].style.display = "none"
+                
+            }
+
+            for (v in buttons) {
+                buttons[v].style.backgroundColor = "rgb(28, 29, 31)"
             }
 
             ficha.a.style.display = "block"
+            buttons.seg.style.backgroundColor = "rgb(0, 81, 255)"
+
         }
 
         function Terça() {
@@ -62,7 +79,12 @@
                 ficha[i].style.display = "none"
             }
 
+            for (v in buttons) {
+                buttons[v].style.backgroundColor = "rgb(28, 29, 31)"
+            }
+
             ficha.b.style.display = "block"
+            buttons.ter.style.backgroundColor = "rgb(0, 81, 255)"
         }
 
         function Quarta() {
@@ -70,7 +92,12 @@
                 ficha[i].style.display = "none"
             }
 
+            for (v in buttons) {
+                buttons[v].style.backgroundColor = "rgb(28, 29, 31)"
+            }
+
             ficha.c.style.display = "block"
+            buttons.qua.style.backgroundColor = "rgb(0, 81, 255)"
         }
 
         function Quinta() {
@@ -78,7 +105,12 @@
                 ficha[i].style.display = "none"
             }
 
+            for (v in buttons) {
+                buttons[v].style.backgroundColor = "rgb(28, 29, 31)"
+            }
+
             ficha.d.style.display = "block"
+            buttons.qui.style.backgroundColor = "rgb(0, 81, 255)"
         }
 
         function Sexta() {
@@ -86,7 +118,12 @@
                 ficha[i].style.display = "none"
             }
 
+            for (v in buttons) {
+                buttons[v].style.backgroundColor = "rgb(28, 29, 31)"
+            }
+
             ficha.e.style.display = "block"
+            buttons.sex.style.backgroundColor = "rgb(0, 81, 255)"
         }
 
         function Sabado() {
@@ -94,7 +131,12 @@
                 ficha[i].style.display = "none"
             }
 
+            for (v in buttons) {
+                buttons[v].style.backgroundColor = "rgb(28, 29, 31)"
+            }
+
             ficha.f.style.display = "block"
+            buttons.sab.style.backgroundColor = "rgb(0, 81, 255)"
         }
 
         //Data Player
@@ -325,14 +367,20 @@
         })
 
         //Save
+        let salvou = false
+
         function Save() {
+            
             const sets = document.querySelectorAll(".sets")
             const peso = document.querySelectorAll(".peso")
             const reps = document.querySelectorAll(".reps")
 
             const saveb = document.getElementById("saveb")
-            saveb.style.transform = "scale(1.1)"
-            saveb.style.backgroundColor = "rgb(255, 220, 20)"
+            saveb.style.backgroundColor = "rgb(0, 51, 161)"
+
+            setTimeout(function() {
+                saveb.style.backgroundColor = "rgb(0, 81, 255)"
+            }, 300)
 
             peso.forEach(v => {
                 localStorage.setItem(v.id, v.value)
@@ -346,9 +394,7 @@
                 localStorage.setItem(v.id, v.value)
             })
 
-            setInterval(function(){
-                location.reload()
-            }, 500)
+
         }
     </script>
 </body>
