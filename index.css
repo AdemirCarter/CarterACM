@@ -1,0 +1,90 @@
+* {
+    font-family: "League Spartan";
+    padding: 0px;
+    margin: 0px;
+}
+
+@media only screen and (max-width: 600px){
+    body {
+        background-color: rgb(47, 48, 51);
+        
+    }
+
+    #logo {
+        background-color: rgb(28, 29, 31);
+        padding: 20px 20px;
+        font-size: 20px;
+        margin-bottom: 10%;
+    }
+
+    /*Save*/
+    #save {
+        display: flex;
+        justify-content: center;
+        transition: .2s;
+    }
+
+    #save button {
+        position: fixed;
+        bottom: 5px;
+        border: none;
+        padding: 20px 20px;
+        width: 300px;
+        font-size: 20px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: .2s;
+    }
+
+    /*Treino*/
+    #treino {
+        padding: 0px 10px;
+        display: block;
+        align-self: center;
+
+    }
+
+    #treino #botoes {
+        justify-self: center;
+    }
+
+    #treino #botoes button {
+        color: white;
+        padding: 8px 15px;
+        font-size: 15px;
+        border: none;
+        border-radius: 30px;
+        position: relative;
+        background-color: rgb(28, 29, 31);
+    }
+
+    #ficha {
+        color: white;
+        background-color: rgb(28, 29, 31);
+        position: relative;
+        top: 70px;
+        height: 425px;
+        font-size: 20px;
+        padding: 20px;
+        border-radius: 30px;
+        overflow-y: scroll;
+    }
+
+    #ficha .fichas div {
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+
+    #ficha .fichas input {
+        height: 30px;
+        width: 80px;
+        margin-right: 5px;
+        border: none;
+        background-color: rgb(47, 48, 51);
+        border-radius: 30px;
+        text-align: center;
+        font-size: 18px;
+        color: rgb(255, 255, 255);
+        margin-top: 5px;
+    }
+}
