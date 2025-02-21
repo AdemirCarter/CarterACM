@@ -19,14 +19,17 @@
 
     /*Save*/
     #save {
+        
         display: flex;
         justify-content: center;
         transition: .2s;
     }
 
     #save button {
+        background-color: rgb(0, 81, 255);
+        color: white;
         position: fixed;
-        bottom: 5px;
+        bottom: 0px;
         border: none;
         padding: 20px 20px;
         width: 300px;
@@ -56,6 +59,7 @@
         border-radius: 30px;
         position: relative;
         background-color: rgb(28, 29, 31);
+        border: 1px solid rgb(0, 81, 255);
     }
 
     #ficha {
@@ -63,16 +67,17 @@
         background-color: rgb(28, 29, 31);
         position: relative;
         top: 70px;
-        height: 425px;
-        font-size: 20px;
+        height: 435px;
+        font-size: 25px;
         padding: 20px;
         border-radius: 30px;
         overflow-y: scroll;
     }
 
     #ficha .fichas div {
-        margin-bottom: 20px;
-        padding: 15px;
+        height: 110px;
+        display: block;
+        justify-self: center;
     }
 
     #ficha .fichas input {
