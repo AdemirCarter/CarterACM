@@ -39,6 +39,8 @@
 
     <script>
         //Variaveis
+        const fichadiv = document.getElementById("ficha")
+
         const ficha = {
             a: document.getElementById("segunda"),
             b: document.getElementById("terça"),
@@ -59,6 +61,8 @@
         }
 
         //Funções
+        let up = false
+
         function Segunda() {
             for (i in ficha) {
                 ficha[i].style.display = "none"
@@ -71,6 +75,15 @@
 
             ficha.a.style.display = "block"
             buttons.seg.style.backgroundColor = "rgb(0, 81, 255)"
+
+            if (up === false) {
+                fichadiv.style.top = "100px"
+                up = true
+                setTimeout(function() {
+                    fichadiv.style.top = "60px"
+                    up = false
+                }, 200)
+            }
 
         }
 
@@ -85,6 +98,15 @@
 
             ficha.b.style.display = "block"
             buttons.ter.style.backgroundColor = "rgb(0, 81, 255)"
+
+            if (up === false) {
+                fichadiv.style.top = "100px"
+                up = true
+                setTimeout(function() {
+                    fichadiv.style.top = "60px"
+                    up = false
+                }, 200)
+            }
         }
 
         function Quarta() {
@@ -98,6 +120,14 @@
 
             ficha.c.style.display = "block"
             buttons.qua.style.backgroundColor = "rgb(0, 81, 255)"
+            if (up === false) {
+                fichadiv.style.top = "100px"
+                up = true
+                setTimeout(function() {
+                    fichadiv.style.top = "60px"
+                    up = false
+                }, 200)
+            }
         }
 
         function Quinta() {
@@ -111,6 +141,14 @@
 
             ficha.d.style.display = "block"
             buttons.qui.style.backgroundColor = "rgb(0, 81, 255)"
+            if (up === false) {
+                fichadiv.style.top = "100px"
+                up = true
+                setTimeout(function() {
+                    fichadiv.style.top = "60px"
+                    up = false
+                }, 200)
+            }
         }
 
         function Sexta() {
@@ -124,6 +162,14 @@
 
             ficha.e.style.display = "block"
             buttons.sex.style.backgroundColor = "rgb(0, 81, 255)"
+            if (up === false) {
+                fichadiv.style.top = "100px"
+                up = true
+                setTimeout(function() {
+                    fichadiv.style.top = "60px"
+                    up = false
+                }, 200)
+            }
         }
 
         function Sabado() {
@@ -137,6 +183,14 @@
 
             ficha.f.style.display = "block"
             buttons.sab.style.backgroundColor = "rgb(0, 81, 255)"
+            if (up === false) {
+                fichadiv.style.top = "100px"
+                up = true
+                setTimeout(function() {
+                    fichadiv.style.top = "60px"
+                    up = false
+                }, 200)
+            }
         }
 
         //Data Player
@@ -377,9 +431,11 @@
 
             const saveb = document.getElementById("saveb")
             saveb.style.backgroundColor = "rgb(0, 51, 161)"
+            saveb.style.transform = "scale(1.1)"
 
             setTimeout(function() {
                 saveb.style.backgroundColor = "rgb(0, 81, 255)"
+                saveb.style.transform = "scale(1)"
             }, 300)
 
             peso.forEach(v => {
