@@ -23,7 +23,7 @@
         
         display: flex;
         justify-content: center;
-        transition: .2s;
+        transition: .3s;
     }
 
     #save button {
@@ -37,7 +37,7 @@
         font-size: 20px;
         border-radius: 30px;
         font-weight: 600;
-        transition: .2s;
+        transition: .3s;
     }
 
     /*Treino*/
@@ -74,7 +74,7 @@
         padding: 20px;
         border-radius: 30px;
         overflow-y: scroll;
-        transition: .2s;
+        transition: .3s;
     }
 
     #ficha .fichas div {
