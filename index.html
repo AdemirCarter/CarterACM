@@ -1,458 +1,400 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CarterACM</title>
+    <title>Document</title>
     <link rel="stylesheet" href="index.css">
-    <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
 </head>
 <body>
-    <meta name="theme-color" content="rgb(28, 29, 31)">
-    <div id="logo">
-        <h3 style="color: rgb(255, 255, 255);">Carter<span style="color: rgb(0, 81, 255);">ACM</span></h3>
+    <meta name="theme-color" content="#151c24">
+
+    <div class="title">
+        <img src="https://img.icons8.com/?size=100&id=1784&format=png&color=ffc400" alt=""> 
+        <h1>Treino</h1>
+    </div>
+    <div class="buttons">
+        <img src="https://img.icons8.com/?size=100&id=10053&format=png&color=ffc400" alt="">
+        <button id="segunda_button">S</button>
+        <button id="terca_button">T</button>
+        <button id="quarta_button">Q</button>
+        <button id="quinta_button">Q</button>
+        <button id="sexta_button">S</button>
     </div>
 
-    <div id="treino" style="display: block;">
-        <div id="botoes">
-            <button id="seg_button" style="background-color: rgb(0, 81, 255);" onclick=Segunda()>Seg</button>
-            <button id="ter_button" onclick=Terça()>Ter</button>
-            <button id="qua_button" onclick=Quarta()>Qua</button>
-            <button id="qui_button" onclick=Quinta()>Qui</button>
-            <button id="sex_button" onclick=Sexta()>Sex</button>
-            <button id="sab_button" onclick=Sabado()>Sab</button>
+    <div id="Treinos">
+        <div id="info">
+            <img src="https://img.icons8.com/?size=100&id=2800&format=png&color=ffc400" alt="">
+            <p id="info">Peso (kg) / Reps / Sets</p>
         </div>
 
-        <div id="ficha">
-            <div class="fichas" id="segunda" style="display: block;"></div>
-            <div class="fichas" id="terça" style="display: none;"></div>
-            <div class="fichas" id="quarta" style="display: none;"></div>
-            <div class="fichas" id="quinta" style="display: none;"></div>
-            <div class="fichas" id="sexta" style="display: none;"></div>
-            <div class="fichas" id="sabado" style="display: none;"></div>
-        </div>
+        <div id="segunda" style="display: none;"></div>
+        <div id="terca" style="display: none;"></div>
+        <div id="quarta" style="display: none;"></div>
+        <div id="quinta" style="display: none;"></div>
+        <div id="sexta" style="display: none;"></div>
     </div>
 
-    <div id="save">
-        <button id="saveb" onclick=Save()>Salvar</button>
-    </div>
+    <button style="display: none;" id="save">Salvar</button>
+</body>
 
-    <script>
-        //Variaveis
-        const fichadiv = document.getElementById("ficha")
-        fichadiv.style.top = "60px"
+<script>
+    const treino_div = document.getElementById("Treinos")
 
-        const ficha = {
-            a: document.getElementById("segunda"),
-            b: document.getElementById("terça"),
-            c: document.getElementById("quarta"),
-            d: document.getElementById("quinta"),
-            e: document.getElementById("sexta"),
-            f: document.getElementById("sabado")
+    const treinos = {
+        "segunda" : document.getElementById("segunda"),
+        "terca" : document.getElementById("terca"),
+        "quarta" : document.getElementById("quarta"),
+        "quinta" : document.getElementById("quinta"),
+        "sexta" : document.getElementById("sexta")
+    }
+
+    const segunda_button = document.getElementById("segunda_button")
+    const terca_button = document.getElementById("terca_button")
+    const quarta_button = document.getElementById("quarta_button")
+    const quinta_button = document.getElementById("quinta_button")
+    const sexta_button = document.getElementById("sexta_button")
+
+    const save = document.getElementById("save")
+
+</script>
+
+<script>
+    let up = false
+
+    segunda_button.addEventListener("click", function() {
+        for (v in treinos) {
+            treinos[v].style.display = "none"
         }
 
-        const buttons = {
-            seg: document.getElementById("seg_button"),
-            ter: document.getElementById("ter_button"),
-            qua: document.getElementById("qua_button"),
-            qui: document.getElementById("qui_button"),
-            sex: document.getElementById("sex_button"),
-            sab: document.getElementById("sab_button")
-
-        }
-
-        //Funções
-        let up = false
-
-        function Segunda() {
-            for (i in ficha) {
-                ficha[i].style.display = "none"
-                
-            }
-
-            for (v in buttons) {
-                buttons[v].style.backgroundColor = "rgb(28, 29, 31)"
-            }
-
-            ficha.a.style.display = "block"
-            buttons.seg.style.backgroundColor = "rgb(0, 81, 255)"
-
-            if (up === false) {
-                fichadiv.style.top = "200px"
-                up = true
-                setTimeout(function() {
-                    fichadiv.style.top = "60px"
-                    up = false
-                }, 200)
-            }
-
-        }
-
-        function Terça() {
-            for (i in ficha) {
-                ficha[i].style.display = "none"
-            }
-
-            for (v in buttons) {
-                buttons[v].style.backgroundColor = "rgb(28, 29, 31)"
-            }
-
-            ficha.b.style.display = "block"
-            buttons.ter.style.backgroundColor = "rgb(0, 81, 255)"
-
-            if (up === false) {
-                fichadiv.style.top = "200px"
-                up = true
-                setTimeout(function() {
-                    fichadiv.style.top = "60px"
-                    up = false
-                }, 200)
-            }
-        }
-
-        function Quarta() {
-            for (i in ficha) {
-                ficha[i].style.display = "none"
-            }
-
-            for (v in buttons) {
-                buttons[v].style.backgroundColor = "rgb(28, 29, 31)"
-            }
-
-            ficha.c.style.display = "block"
-            buttons.qua.style.backgroundColor = "rgb(0, 81, 255)"
-            if (up === false) {
-                fichadiv.style.top = "200px"
-                up = true
-                setTimeout(function() {
-                    fichadiv.style.top = "60px"
-                    up = false
-                }, 200)
-            }
-        }
-
-        function Quinta() {
-            for (i in ficha) {
-                ficha[i].style.display = "none"
-            }
-
-            for (v in buttons) {
-                buttons[v].style.backgroundColor = "rgb(28, 29, 31)"
-            }
-
-            ficha.d.style.display = "block"
-            buttons.qui.style.backgroundColor = "rgb(0, 81, 255)"
-            if (up === false) {
-                fichadiv.style.top = "200px"
-                up = true
-                setTimeout(function() {
-                    fichadiv.style.top = "60px"
-                    up = false
-                }, 200)
-            }
-        }
-
-        function Sexta() {
-            for (i in ficha) {
-                ficha[i].style.display = "none"
-            }
-
-            for (v in buttons) {
-                buttons[v].style.backgroundColor = "rgb(28, 29, 31)"
-            }
-
-            ficha.e.style.display = "block"
-            buttons.sex.style.backgroundColor = "rgb(0, 81, 255)"
-            if (up === false) {
-                fichadiv.style.top = "200px"
-                up = true
-                setTimeout(function() {
-                    fichadiv.style.top = "60px"
-                    up = false
-                }, 200)
-            }
-        }
-
-        function Sabado() {
-            for (i in ficha) {
-                ficha[i].style.display = "none"
-            }
-
-            for (v in buttons) {
-                buttons[v].style.backgroundColor = "rgb(28, 29, 31)"
-            }
-
-            ficha.f.style.display = "block"
-            buttons.sab.style.backgroundColor = "rgb(0, 81, 255)"
-            if (up === false) {
-                fichadiv.style.top = "200px"
-                up = true
-                setTimeout(function() {
-                    fichadiv.style.top = "60px"
-                    up = false
-                }, 200)
-            }
-        }
-
-        //Data Player
-        fetch("data.json")
-        .then(res => res.json())
-        .then(data => {
-            data.Segunda.forEach((treino, index) => {
-                const divex = document.createElement("div")
-                divex.id = `exercicio${index}`
-                const exercicio = document.createElement("p")
-                const peso = document.createElement("input")
-                const reps = document.createElement("input")
-                const sets = document.createElement("input")
-
-                exercicio.textContent = treino
-                peso.placeholder = "kg"
-                reps.placeholder = "reps"
-                sets.placeholder = "sets"
-
-                peso.id = `peso_a${index}`
-                reps.id = `reps_a${index}`
-                sets.id = `sets_a${index}`
-
-                peso.className = "peso"
-                reps.className = "reps"
-                sets.className = "sets"
-
-                peso.type = "text"
-                reps.type = "text"
-                sets.type = "text"
-
-                peso.value = localStorage.getItem(peso.id)
-                sets.value = localStorage.getItem(sets.id)
-                reps.value = localStorage.getItem(reps.id)
-
-                ficha.a.appendChild(divex)
-                divex.appendChild(exercicio)
-                divex.appendChild(peso)
-                divex.appendChild(reps)
-                divex.appendChild(sets)
-
-            })
-
-            data.Terça.forEach((treino, index) => {
-                const divex = document.createElement("div")
-                divex.id = `exercicio${index}`
-                const exercicio = document.createElement("p")
-                const peso = document.createElement("input")
-                const reps = document.createElement("input")
-                const sets = document.createElement("input")
-
-                exercicio.textContent = treino
-                peso.placeholder = "kg"
-                reps.placeholder = "reps"
-                sets.placeholder = "sets"
-
-                peso.id = `peso_b${index}`
-                reps.id = `reps_b${index}`
-                sets.id = `sets_b${index}`
-
-                peso.className = "peso"
-                reps.className = "reps"
-                sets.className = "sets"
-
-                peso.type = "text"
-                reps.type = "text"
-                sets.type = "text"
-
-                peso.value = localStorage.getItem(peso.id)
-                sets.value = localStorage.getItem(sets.id)
-                reps.value = localStorage.getItem(reps.id)
-
-                ficha.b.appendChild(divex)
-                divex.appendChild(exercicio)
-                divex.appendChild(peso)
-                divex.appendChild(reps)
-                divex.appendChild(sets)
-
-            })
-
-            data.Quarta.forEach((treino, index) => {
-                const divex = document.createElement("div")
-                divex.id = `exercicio${index}`
-                const exercicio = document.createElement("p")
-                const peso = document.createElement("input")
-                const reps = document.createElement("input")
-                const sets = document.createElement("input")
-
-                exercicio.textContent = treino
-                peso.placeholder = "kg"
-                reps.placeholder = "reps"
-                sets.placeholder = "sets"
-
-                peso.id = `peso_c${index}`
-                reps.id = `reps_c${index}`
-                sets.id = `sets_c${index}`
-
-                peso.className = "peso"
-                reps.className = "reps"
-                sets.className = "sets"
-
-                peso.type = "text"
-                reps.type = "text"
-                sets.type = "text"
-
-                peso.value = localStorage.getItem(peso.id)
-                sets.value = localStorage.getItem(sets.id)
-                reps.value = localStorage.getItem(reps.id)
-
-                ficha.c.appendChild(divex)
-                divex.appendChild(exercicio)
-                divex.appendChild(peso)
-                divex.appendChild(reps)
-                divex.appendChild(sets)
-
-            })
-
-            data.Quinta.forEach((treino, index) => {
-                const divex = document.createElement("div")
-                divex.id = `exercicio${index}`
-                const exercicio = document.createElement("p")
-                const peso = document.createElement("input")
-                const reps = document.createElement("input")
-                const sets = document.createElement("input")
-
-                exercicio.textContent = treino
-                peso.placeholder = "kg"
-                reps.placeholder = "reps"
-                sets.placeholder = "sets"
-
-                peso.id = `peso_d${index}`
-                reps.id = `reps_d${index}`
-                sets.id = `sets_d${index}`
-
-                peso.className = "peso"
-                reps.className = "reps"
-                sets.className = "sets"
-
-                peso.type = "text"
-                reps.type = "text"
-                sets.type = "text"
-
-                peso.value = localStorage.getItem(peso.id)
-                sets.value = localStorage.getItem(sets.id)
-                reps.value = localStorage.getItem(reps.id)
-
-                ficha.d.appendChild(divex)
-                divex.appendChild(exercicio)
-                divex.appendChild(peso)
-                divex.appendChild(reps)
-                divex.appendChild(sets)
-
-            })
-
-            data.Sexta.forEach((treino, index) => {
-                const divex = document.createElement("div")
-                divex.id = `exercicio${index}`
-                const exercicio = document.createElement("p")
-                const peso = document.createElement("input")
-                const reps = document.createElement("input")
-                const sets = document.createElement("input")
-
-                exercicio.textContent = treino
-                peso.placeholder = "kg"
-                reps.placeholder = "reps"
-                sets.placeholder = "sets"
-
-                peso.id = `peso_e${index}`
-                reps.id = `reps_e${index}`
-                sets.id = `sets_e${index}`
-
-                peso.className = "peso"
-                reps.className = "reps"
-                sets.className = "sets"
-
-                peso.type = "text"
-                reps.type = "text"
-                sets.type = "text"
-
-                peso.value = localStorage.getItem(peso.id)
-                sets.value = localStorage.getItem(sets.id)
-                reps.value = localStorage.getItem(reps.id)
-
-                ficha.e.appendChild(divex)
-                divex.appendChild(exercicio)
-                divex.appendChild(peso)
-                divex.appendChild(reps)
-                divex.appendChild(sets)
-
-            })
-
-            data.Sabado.forEach((treino, index) => {
-                const divex = document.createElement("div")
-                divex.id = `exercicio${index}`
-                const exercicio = document.createElement("p")
-                const peso = document.createElement("input")
-                const reps = document.createElement("input")
-                const sets = document.createElement("input")
-
-                exercicio.textContent = treino
-                peso.placeholder = "kg"
-                reps.placeholder = "reps"
-                sets.placeholder = "sets"
-
-                peso.id = `peso_f${index}`
-                reps.id = `reps_f${index}`
-                sets.id = `sets_f${index}`
-
-                peso.className = "peso"
-                reps.className = "reps"
-                sets.className = "sets"
-
-                peso.type = "text"
-                reps.type = "text"
-                sets.type = "text"
-
-                peso.value = localStorage.getItem(peso.id)
-                sets.value = localStorage.getItem(sets.id)
-                reps.value = localStorage.getItem(reps.id)
-
-                ficha.f.appendChild(divex)
-                divex.appendChild(exercicio)
-                divex.appendChild(peso)
-                divex.appendChild(reps)
-                divex.appendChild(sets)
-
-            })
-        })
-
-        //Save
-        let salvou = false
-
-        function Save() {
+        treinos.segunda.style.display = "block"
+        save.style.display = "block"
+
+        if (up === false) {
+            treino_div.style.top = "40px"
+            up = true
+
+        } else {
+            treino_div.style.top = "180px"
             
-            const sets = document.querySelectorAll(".sets")
-            const peso = document.querySelectorAll(".peso")
-            const reps = document.querySelectorAll(".reps")
-
-            const saveb = document.getElementById("saveb")
-            saveb.style.backgroundColor = "rgb(0, 51, 161)"
-            saveb.style.transform = "scale(1.1)"
-
             setTimeout(function() {
-                saveb.style.backgroundColor = "rgb(0, 81, 255)"
-                saveb.style.transform = "scale(1)"
+                treino_div.style.top = "40px"
+            }, 200)
+        }
+    })
+
+    terca_button.addEventListener("click", function() {
+        for (v in treinos) {
+            treinos[v].style.display = "none"
+        }
+
+        
+        treinos.terca.style.display = "block"
+        save.style.display = "block"
+
+        if (up === false) {
+            treino_div.style.top = "40px"
+            up = true
+
+        } else {
+            treino_div.style.top = "180px"
+            
+            setTimeout(function() {
+                treino_div.style.top = "40px"
             }, 200)
 
-            peso.forEach(v => {
-                localStorage.setItem(v.id, v.value)
-            })
+        }
+    })
 
-            sets.forEach(v => {
-                localStorage.setItem(v.id, v.value)
-            })
+    quarta_button.addEventListener("click", function() {
+        for (v in treinos) {
+            treinos[v].style.display = "none"
+        }
 
-            reps.forEach(v => {
-                localStorage.setItem(v.id, v.value)
-            })
+        treinos.quarta.style.display = "block"
+        save.style.display = "block"
+        if (up === false) {
+            treino_div.style.top = "40px"
+            up = true
 
+        } else {
+            treino_div.style.top = "180px"
+            
+            setTimeout(function() {
+                treino_div.style.top = "40px"
+                
+            }, 200)
 
         }
-    </script>
-</body>
+    })
+
+    quinta_button.addEventListener("click", function() {
+        for (v in treinos) {
+            treinos[v].style.display = "none"
+        }
+
+        treinos.quinta.style.display = "block"
+        save.style.display = "block"
+        if (up === false) {
+            treino_div.style.top = "40px"
+            up = true
+
+        } else {
+            treino_div.style.top = "180px"
+            
+            setTimeout(function() {
+                treino_div.style.top = "40px"
+            }, 200)
+
+        }
+    })
+
+    sexta_button.addEventListener("click", function() {
+        for (v in treinos) {
+            treinos[v].style.display = "none"
+        }
+
+        treinos.sexta.style.display = "block"
+        save.style.display = "block"
+        if (up === false) {
+            treino_div.style.top = "20px"
+            up = true
+
+        } else {
+            treino_div.style.top = "180px"
+            
+            setTimeout(function() {
+                treino_div.style.top = "40px"
+            }, 200)
+
+        }
+    })
+    
+</script>
+
+<script>
+
+    fetch("userdata.json")
+    .then(res => res.json())
+    .then(data => {
+        data.Segunda.forEach((exercise, count) => {
+            if (exercise !== "Descanso") {
+                const exercise_name = document.createElement("p")
+                exercise_name.textContent = exercise
+                exercise_name.style.fontWeight = "600"
+
+                const peso = document.createElement("input")
+                peso.id = `peso_seg ${count}`
+                peso.placeholder = "Peso"
+                peso.className = "Peso"
+
+
+                const rep = document.createElement("input")
+                rep.id = `rep_seg ${count}`
+                rep.placeholder = "Reps"
+                rep.className = "Reps"
+
+
+                const sets = document.createElement("input")
+                sets.id = `sets_seg ${count}`
+                sets.placeholder = "Sets"
+                sets.className = "Sets"
+
+
+                peso.value = localStorage.getItem(peso.id)
+                rep.value = localStorage.getItem(rep.id)
+                sets.value = localStorage.getItem(sets.id)
+                
+                treinos.segunda.append(exercise_name)
+
+                treinos.segunda.append(peso)
+
+                treinos.segunda.append(rep)
+
+                treinos.segunda.append(sets)
+
+            }
+
+        })
+
+        data.Terca.forEach((exercise, count) => {
+            const exercise_name = document.createElement("p")
+            exercise_name.textContent = exercise
+            exercise_name.style.fontWeight = "600"
+
+            treinos.terca.append(exercise_name)
+
+            if (exercise !== "Descanso") {
+                const peso = document.createElement("input")
+                peso.id = `peso_ter ${count}`
+                peso.placeholder = "Peso"
+                peso.className = "Peso"
+
+
+                const rep = document.createElement("input")
+                rep.id = `rep_ter ${count}`
+                rep.placeholder = "Reps"
+                rep.className = "Reps"
+
+
+                const sets = document.createElement("input")
+                sets.id = `sets_ter ${count}`
+                sets.placeholder = "Sets"
+                sets.className = "Sets"
+
+
+                peso.value = localStorage.getItem(peso.id)
+                rep.value = localStorage.getItem(rep.id)
+                sets.value = localStorage.getItem(sets.id)
+
+                treinos.terca.append(peso)
+
+                treinos.terca.append(rep)
+
+                treinos.terca.append(sets)
+            }
+
+        })
+
+        data.Quarta.forEach((exercise, count) => {
+            const exercise_name = document.createElement("p")
+            exercise_name.textContent = exercise
+            exercise_name.style.fontWeight = "600"
+
+            treinos.quarta.append(exercise_name)
+
+            if (exercise !== "Descanso") {
+                const peso = document.createElement("input")
+                peso.id = `peso_qua ${count}`
+                peso.placeholder = "Peso"
+                peso.className = "Peso"
+
+
+                const rep = document.createElement("input")
+                rep.id = `rep_qua ${count}`
+                rep.placeholder = "Reps"
+                rep.className = "Reps"
+
+
+                const sets = document.createElement("input")
+                sets.id = `sets_qua ${count}`
+                sets.placeholder = "Sets"
+                sets.className = "Sets"
+
+
+                peso.value = localStorage.getItem(peso.id)
+                rep.value = localStorage.getItem(rep.id)
+                sets.value = localStorage.getItem(sets.id)
+
+                treinos.quarta.append(peso)
+
+                treinos.quarta.append(rep)
+
+                treinos.quarta.append(sets)
+            }
+
+        })
+
+        data.Quinta.forEach((exercise, count) => {
+            const exercise_name = document.createElement("p")
+            exercise_name.textContent = exercise
+            exercise_name.style.fontWeight = "600"
+
+            treinos.quinta.append(exercise_name)
+
+            if (exercise !== "Descanso") {
+
+                const peso = document.createElement("input")
+                peso.id = `peso_qui ${count}`
+                peso.placeholder = "Peso"
+                peso.className = "Peso"
+
+
+                const rep = document.createElement("input")
+                rep.id = `rep_qui ${count}`
+                rep.placeholder = "Reps"
+                rep.className = "Reps"
+
+
+                const sets = document.createElement("input")
+                sets.id = `sets_qui ${count}`
+                sets.placeholder = "Sets"
+                sets.className = "Sets"
+
+
+                peso.value = localStorage.getItem(peso.id)
+                rep.value = localStorage.getItem(rep.id)
+                sets.value = localStorage.getItem(sets.id)
+
+                treinos.quinta.append(peso)
+
+                treinos.quinta.append(rep)
+
+                treinos.quinta.append(sets)
+            }
+
+        })
+
+        data.Sexta.forEach((exercise, count) => {
+            const exercise_name = document.createElement("p")
+            exercise_name.textContent = exercise
+            exercise_name.style.fontWeight = "600"
+
+            treinos.sexta.append(exercise_name)
+
+            if (exercise !== "Descanso") {
+
+                const peso = document.createElement("input")
+                peso.id = `peso_sexta ${count}`
+                peso.placeholder = "Peso"
+                peso.className = "Peso"
+
+
+                const rep = document.createElement("input")
+                rep.id = `rep_sexta ${count}`
+                rep.placeholder = "Reps"
+                rep.className = "Reps"
+
+
+                const sets = document.createElement("input")
+                sets.id = `sets_sexta ${count}`
+                sets.placeholder = "Sets"
+                sets.className = "Sets"
+
+
+                peso.value = localStorage.getItem(peso.id)
+                rep.value = localStorage.getItem(rep.id)
+                sets.value = localStorage.getItem(sets.id)
+
+                treinos.sexta.append(peso)
+
+                treinos.sexta.append(rep)
+
+                treinos.sexta.append(sets)
+            }
+
+        })
+        
+    })
+</script>
+
+<script>
+    save.addEventListener("click", function() {
+        const peso = document.querySelectorAll("input.Peso")
+        peso.forEach(i => {
+            localStorage.setItem(i.id, i.value)
+        })
+
+        const reps = document.querySelectorAll("input.Reps")
+        reps.forEach(i => {
+            localStorage.setItem(i.id, i.value)
+        })
+
+        const sets = document.querySelectorAll("input.Sets")
+        sets.forEach(i => {
+            localStorage.setItem(i.id, i.value)
+        })
+    })
+</script>
+
 </html>

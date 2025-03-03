@@ -1,98 +1,124 @@
 * {
-    font-family: "League Spartan";
     padding: 0px;
     margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-@media only screen and (max-width: 600px){
+@media screen and (max-width: 600px){
     body {
-        background-color: rgb(47, 48, 51);
-        
+        background-color: #151c24;
+        color: white;
     }
 
-    #logo {
+    .title {
         display: flex;
-        background-color: rgb(28, 29, 31);
-        padding: 20px 20px;
-        font-size: 20px;
-        margin-bottom: 10%;
-    }
-
-    /*Save*/
-    #save {
-        
-        display: flex;
+        align-items: center;
         justify-content: center;
-        transition: .3s;
+        margin-bottom: 20px;
+        margin-top: 10px;
     }
 
-    #save button {
-        background-color: rgb(0, 81, 255);
-        color: white;
-        position: fixed;
-        bottom: 0px;
-        border: none;
-        padding: 20px 20px;
-        width: 300px;
+    .title img {
+        width: 45px;
+        margin-right: 15px;
+    }
+    
+    .title h1 {
+        color: #ffc400;
+        text-align: center;
+        
+    }
+
+    .buttons {
+        display: flex;
+        justify-self: center;
+        margin-bottom: 20px;
+    }
+
+    .buttons button {
         font-size: 20px;
-        border-radius: 30px;
-        font-weight: 600;
-        transition: .3s;
-    }
-
-    /*Treino*/
-    #treino {
-        padding: 0px 10px;
-        display: block;
-        align-self: center;
-
-    }
-
-    #treino #botoes {
-        justify-self: center;
-    }
-
-    #treino #botoes button {
         color: white;
-        width: 52px;
-        height: 35px;
-        font-size: 15px;
+        padding: 6px 20px;
         border: none;
-        border-radius: 30px;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 20px;
+        font-weight: 700;
+        
+    }
+
+    .buttons img {
+        width: 30px;
+        margin-right: 10px;
+    }
+
+    #Treinos {
         position: relative;
-        background-color: rgb(28, 29, 31);
+        height: 470px;
+        font-size: 17px;
+        width: 330px;
+        top: 120px;
+        left: 50%;
+        transform: translate(-50%);
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 10px;
+        border-radius: 40px;
+        overflow-y: auto;
         transition: .3s;
     }
 
-    #ficha {
-        color: rgb(255, 255, 255);
-        background-color: rgb(28, 29, 31);
-        position: relative;
-        top: 90px;
-        height: 435px;
-        font-size: 25px;
-        padding: 20px;
-        border-radius: 30px;
-        overflow-y: scroll;
-        transition: .3s;
+    #Treinos p {
+        font-size: 20px;
+        margin-bottom: 10px;
     }
 
-    #ficha .fichas div {
-        height: 110px;
-        display: block;
-        justify-self: center;
+    #Treinos #info {
+        justify-content: center;
+        margin-bottom: 20px;
+        color: rgb(255, 196, 0);
+        font-size: 15px;
+        display: flex;
     }
 
-    #ficha .fichas input {
-        height: 30px;
-        width: 80px;
+    #Treinos #info img {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    #segunda, #terca, #quarta, #quinta, #sexta {
+        justify-items: center;
+    }
+
+    .Reps, .Peso, .Sets {
+        color: white;
+        font-size: 16px;
+        width: 30px;
         margin-right: 5px;
         border: none;
-        background-color: rgb(47, 48, 51);
-        border-radius: 30px;
         text-align: center;
-        font-size: 18px;
-        color: rgb(255, 255, 255);
-        margin-top: 5px;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 8px 10px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+
+    #save {
+        transition: .2s;
+        position: fixed;
+        bottom: 1px;
+        left: 50%;
+        transform: translate(-50%);
+        width: 300px;
+        font-weight: 600;
+        font-size: 25px;
+        border: none;
+        border-radius: 20px;
+        margin-top: 10px;
+        padding: 8px;
+        background-color: rgb(255, 196, 0);
+    }
+
+    #save:active {
+        background-color: rgb(180, 138, 0);
     }
 }
