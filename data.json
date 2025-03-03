@@ -1,8 +1,0 @@
-{
-    "Segunda": ["Pulldown", "Remada Serrote", "Puxada Triangulo", "Remada Aberta", "Posterior de Ombro", "Triceps Frances", "Triceps V"],
-    "Terça": ["Extensora", "Cadeira Silio", "Panturrilha (Hack)", "Leg Press", "Cadeira Flexora", "Flexora em Pé"],
-    "Quarta": ["Supino Inclinado", "Crucifixo", "Supino Reto", "Polia Alta", "Elevação Lateral", "Rosca Direta", "Rosca Bayesian", "Rosca Martelo"],
-    "Quinta": ["Descanso"],
-    "Sexta": ["Supino Inclinado", "Extensora", "Panturrilha (hack)", "Crucifixo", "Triceps Frances", "Desenvolvimento", "Rosca Direta", "Pulldown", "Cadeira Flexora"],
-    "Sabado": ["Descanso"]
-}
