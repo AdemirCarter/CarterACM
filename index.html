@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <meta name="theme-color" content="#151c24">
+    <meta name="theme-color" content="#28282e">
 
-    <div class="title">
-        <img src="https://img.icons8.com/?size=100&id=1784&format=png&color=ffc400" alt=""> 
-        <h1>Treino</h1>
+    <div id="title">
+        <img id="dumbblee" src="https://img.icons8.com/?size=100&id=9773&format=png&color=ffffff" alt=""> 
+        <p>Treino</p>
     </div>
-    <div class="buttons">
-        <img src="https://img.icons8.com/?size=100&id=10053&format=png&color=ffc400" alt="">
+    <div id="buttons">
+        <img src="https://img.icons8.com/?size=100&id=10053&format=png&color=ffffff" alt="">
         <button id="segunda_button">S</button>
         <button id="terca_button">T</button>
         <button id="quarta_button">Q</button>
@@ -22,11 +22,12 @@
         <button id="sexta_button">S</button>
     </div>
 
+    <div id="Info">
+        <img src="https://img.icons8.com/?size=100&id=2800&format=png&color=ffffff" alt="">
+        <p id="info">Peso (kg) / Reps / Sets</p>
+    </div>
+
     <div id="Treinos">
-        <div id="info">
-            <img src="https://img.icons8.com/?size=100&id=2800&format=png&color=ffc400" alt="">
-            <p id="info">Peso (kg) / Reps / Sets</p>
-        </div>
 
         <div id="segunda" style="display: none;"></div>
         <div id="terca" style="display: none;"></div>
@@ -38,8 +39,14 @@
     <button style="display: none;" id="save">Salvar</button>
 </body>
 
-<script>
+<script> //Variaveis
     const treino_div = document.getElementById("Treinos")
+    const Info = document.getElementById("Info")
+    const button_div = document.getElementById("buttons")
+    const title = document.getElementById("title")
+    const save = document.getElementById("save")
+
+    let up = false
 
     const treinos = {
         "segunda" : document.getElementById("segunda"),
@@ -49,352 +56,48 @@
         "sexta" : document.getElementById("sexta")
     }
 
-    const segunda_button = document.getElementById("segunda_button")
-    const terca_button = document.getElementById("terca_button")
-    const quarta_button = document.getElementById("quarta_button")
-    const quinta_button = document.getElementById("quinta_button")
-    const sexta_button = document.getElementById("sexta_button")
+    const buttons = {
+        "trocarcor": document.getElementById("trocarcor"),
+        "segunda" : document.getElementById("segunda_button"),
+        "terca" : document.getElementById("terca_button"),
+        "quarta" : document.getElementById("quarta_button"),
+        "quinta" : document.getElementById("quinta_button"),
+        "sexta" : document.getElementById("sexta_button")
+    }
 
-    const save = document.getElementById("save")
+    const color = {
+        "img_info": Info.children[0],
+        "info": Info.children[1],
+        "img_title": title.children[0],
+        "titulo": title.children[1],
+        "trocacolor": buttons.trocarcor.children[0],
+        "img_date": button_div.children[0]
+    }
 
-</script>
-
-<script>
-    let up = false
-
-    segunda_button.addEventListener("click", function() {
-        for (v in treinos) {
-            treinos[v].style.display = "none"
-        }
-
-        treinos.segunda.style.display = "block"
-        save.style.display = "block"
-
-        if (up === false) {
-            treino_div.style.top = "40px"
-            up = true
-
-        } else {
-            treino_div.style.top = "180px"
-            
-            setTimeout(function() {
-                treino_div.style.top = "40px"
-            }, 200)
-        }
-    })
-
-    terca_button.addEventListener("click", function() {
-        for (v in treinos) {
-            treinos[v].style.display = "none"
-        }
-
-        
-        treinos.terca.style.display = "block"
-        save.style.display = "block"
-
-        if (up === false) {
-            treino_div.style.top = "40px"
-            up = true
-
-        } else {
-            treino_div.style.top = "180px"
-            
-            setTimeout(function() {
-                treino_div.style.top = "40px"
-            }, 200)
-
-        }
-    })
-
-    quarta_button.addEventListener("click", function() {
-        for (v in treinos) {
-            treinos[v].style.display = "none"
-        }
-
-        treinos.quarta.style.display = "block"
-        save.style.display = "block"
-        if (up === false) {
-            treino_div.style.top = "40px"
-            up = true
-
-        } else {
-            treino_div.style.top = "180px"
-            
-            setTimeout(function() {
-                treino_div.style.top = "40px"
-                
-            }, 200)
-
-        }
-    })
-
-    quinta_button.addEventListener("click", function() {
-        for (v in treinos) {
-            treinos[v].style.display = "none"
-        }
-
-        treinos.quinta.style.display = "block"
-        save.style.display = "block"
-        if (up === false) {
-            treino_div.style.top = "40px"
-            up = true
-
-        } else {
-            treino_div.style.top = "180px"
-            
-            setTimeout(function() {
-                treino_div.style.top = "40px"
-            }, 200)
-
-        }
-    })
-
-    sexta_button.addEventListener("click", function() {
-        for (v in treinos) {
-            treinos[v].style.display = "none"
-        }
-
-        treinos.sexta.style.display = "block"
-        save.style.display = "block"
-        if (up === false) {
-            treino_div.style.top = "20px"
-            up = true
-
-        } else {
-            treino_div.style.top = "180px"
-            
-            setTimeout(function() {
-                treino_div.style.top = "40px"
-            }, 200)
-
-        }
-    })
     
+
 </script>
 
-<script>
-
-    fetch("userdata.json")
-    .then(res => res.json())
-    .then(data => {
-        data.Segunda.forEach((exercise, count) => {
-            if (exercise !== "Descanso") {
-                const exercise_name = document.createElement("p")
-                exercise_name.textContent = exercise
-                exercise_name.style.fontWeight = "600"
-
-                const peso = document.createElement("input")
-                peso.id = `peso_seg ${count}`
-                peso.placeholder = "Peso"
-                peso.className = "Peso"
-
-
-                const rep = document.createElement("input")
-                rep.id = `rep_seg ${count}`
-                rep.placeholder = "Reps"
-                rep.className = "Reps"
-
-
-                const sets = document.createElement("input")
-                sets.id = `sets_seg ${count}`
-                sets.placeholder = "Sets"
-                sets.className = "Sets"
-
-
-                peso.value = localStorage.getItem(peso.id)
-                rep.value = localStorage.getItem(rep.id)
-                sets.value = localStorage.getItem(sets.id)
-                
-                treinos.segunda.append(exercise_name)
-
-                treinos.segunda.append(peso)
-
-                treinos.segunda.append(rep)
-
-                treinos.segunda.append(sets)
-
-            }
-
-        })
-
-        data.Terca.forEach((exercise, count) => {
-            const exercise_name = document.createElement("p")
-            exercise_name.textContent = exercise
-            exercise_name.style.fontWeight = "600"
-
-            treinos.terca.append(exercise_name)
-
-            if (exercise !== "Descanso") {
-                const peso = document.createElement("input")
-                peso.id = `peso_ter ${count}`
-                peso.placeholder = "Peso"
-                peso.className = "Peso"
-
-
-                const rep = document.createElement("input")
-                rep.id = `rep_ter ${count}`
-                rep.placeholder = "Reps"
-                rep.className = "Reps"
-
-
-                const sets = document.createElement("input")
-                sets.id = `sets_ter ${count}`
-                sets.placeholder = "Sets"
-                sets.className = "Sets"
-
-
-                peso.value = localStorage.getItem(peso.id)
-                rep.value = localStorage.getItem(rep.id)
-                sets.value = localStorage.getItem(sets.id)
-
-                treinos.terca.append(peso)
-
-                treinos.terca.append(rep)
-
-                treinos.terca.append(sets)
-            }
-
-        })
-
-        data.Quarta.forEach((exercise, count) => {
-            const exercise_name = document.createElement("p")
-            exercise_name.textContent = exercise
-            exercise_name.style.fontWeight = "600"
-
-            treinos.quarta.append(exercise_name)
-
-            if (exercise !== "Descanso") {
-                const peso = document.createElement("input")
-                peso.id = `peso_qua ${count}`
-                peso.placeholder = "Peso"
-                peso.className = "Peso"
-
-
-                const rep = document.createElement("input")
-                rep.id = `rep_qua ${count}`
-                rep.placeholder = "Reps"
-                rep.className = "Reps"
-
-
-                const sets = document.createElement("input")
-                sets.id = `sets_qua ${count}`
-                sets.placeholder = "Sets"
-                sets.className = "Sets"
-
-
-                peso.value = localStorage.getItem(peso.id)
-                rep.value = localStorage.getItem(rep.id)
-                sets.value = localStorage.getItem(sets.id)
-
-                treinos.quarta.append(peso)
-
-                treinos.quarta.append(rep)
-
-                treinos.quarta.append(sets)
-            }
-
-        })
-
-        data.Quinta.forEach((exercise, count) => {
-            const exercise_name = document.createElement("p")
-            exercise_name.textContent = exercise
-            exercise_name.style.fontWeight = "600"
-
-            treinos.quinta.append(exercise_name)
-
-            if (exercise !== "Descanso") {
-
-                const peso = document.createElement("input")
-                peso.id = `peso_qui ${count}`
-                peso.placeholder = "Peso"
-                peso.className = "Peso"
-
-
-                const rep = document.createElement("input")
-                rep.id = `rep_qui ${count}`
-                rep.placeholder = "Reps"
-                rep.className = "Reps"
-
-
-                const sets = document.createElement("input")
-                sets.id = `sets_qui ${count}`
-                sets.placeholder = "Sets"
-                sets.className = "Sets"
-
-
-                peso.value = localStorage.getItem(peso.id)
-                rep.value = localStorage.getItem(rep.id)
-                sets.value = localStorage.getItem(sets.id)
-
-                treinos.quinta.append(peso)
-
-                treinos.quinta.append(rep)
-
-                treinos.quinta.append(sets)
-            }
-
-        })
-
-        data.Sexta.forEach((exercise, count) => {
-            const exercise_name = document.createElement("p")
-            exercise_name.textContent = exercise
-            exercise_name.style.fontWeight = "600"
-
-            treinos.sexta.append(exercise_name)
-
-            if (exercise !== "Descanso") {
-
-                const peso = document.createElement("input")
-                peso.id = `peso_sexta ${count}`
-                peso.placeholder = "Peso"
-                peso.className = "Peso"
-
-
-                const rep = document.createElement("input")
-                rep.id = `rep_sexta ${count}`
-                rep.placeholder = "Reps"
-                rep.className = "Reps"
-
-
-                const sets = document.createElement("input")
-                sets.id = `sets_sexta ${count}`
-                sets.placeholder = "Sets"
-                sets.className = "Sets"
-
-
-                peso.value = localStorage.getItem(peso.id)
-                rep.value = localStorage.getItem(rep.id)
-                sets.value = localStorage.getItem(sets.id)
-
-                treinos.sexta.append(peso)
-
-                treinos.sexta.append(rep)
-
-                treinos.sexta.append(sets)
-            }
-
-        })
-        
-    })
-</script>
-
-<script>
+<script> //Salvar Database
     save.addEventListener("click", function() {
         const peso = document.querySelectorAll("input.Peso")
-        peso.forEach(i => {
-            localStorage.setItem(i.id, i.value)
+        peso.forEach(peso_save => {
+            localStorage.setItem(peso_save.id, peso_save.value)
         })
 
         const reps = document.querySelectorAll("input.Reps")
-        reps.forEach(i => {
-            localStorage.setItem(i.id, i.value)
+        reps.forEach(rep_save => {
+            localStorage.setItem(rep_save.id, rep_save.value)
         })
 
         const sets = document.querySelectorAll("input.Sets")
-        sets.forEach(i => {
-            localStorage.setItem(i.id, i.value)
+        sets.forEach(sets_save => {
+            localStorage.setItem(sets_save.id, sets_save.value)
         })
     })
 </script>
+
+<script src="botoes.js"></script>
+<script src="database.js"></script>
 
 </html>
