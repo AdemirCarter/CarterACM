@@ -12,7 +12,7 @@ buttons.segunda.addEventListener("click", function() {
 
     }
 
-    buttons[dia].style = "border-bottom: 2px solid white"
+    buttons[dia].style.borderBottom = "2px solid white"
 
     treinos[dia].style.display = "block"
     save.style.display = "block"
