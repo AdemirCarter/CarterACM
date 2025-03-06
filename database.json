@@ -1,7 +1,7 @@
 {
     "Segunda": ["Pulldown", "Remada Serrote", "Puxada Fechada", "Remada Alta", "Posterior de Ombro", "Triceps Barra", "Triceps Frances", "Antebraço"],
     "Terca": ["Extensora", "Panturrilha Hack", "Abdutora", "Agachamento Hack", "Cadeira Flexora", "Mesa Flexora"],
-    "Quarta": ["Supino Reto", "Crucifixo", "Supino Inclinado", "Rosca W", "Rosca Bayesian", "Rosca Martelo", "Antebraço"],
-    "Quinta": ["Elevação Lateral", "Desenvolvimento", "Extensora", "Panturrilha Hack", "Cadeira Flexora"],
-    "Sexta": ["Supino Inclinado", "Crucifixo", "Supino Reto", "Triceps Corda", "Triceps Frances", "Rosca W", "Antebraço"]
+    "Quarta": ["Supino Reto", "Crucifixo", "Elevação Lateral", "Supino Inclinado", "Rosca W", "Rosca Bayesian", "Rosca Martelo", "Antebraço"],
+    "Quinta": ["Extensora", "Panturrilha Hack", "Abdutora", "Agachamento Hack", "Cadeira Flexora", "Mesa Flexora"],
+    "Sexta": ["Supino Inclinado", "Crucifixo", "Desenvolvimento", "Supino Reto", "Triceps Corda", "Triceps Frances", "Rosca W", "Antebraço"]
 }
